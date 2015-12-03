@@ -1,0 +1,96 @@
+{extends file="admin-layout.tpl"}
+
+{block name="no-return-functions"}
+{$admin_current_location = 'modules'}
+{/block}
+
+{block name="page-title"}{intl d="storeseo.bo.default" l='StoreSeo configuration'}{/block}
+
+{block name="check-resource"}admin.module{/block}
+{block name="check-access"}view{/block}
+{block name="check-module"}StoreSeo{/block}
+
+{block name="main-content"}
+<div class="container" id="wrapper">
+
+    <ul class="breadcrumb">
+        <li><a href="{url path='/admin'}">{intl l="Home" d="storeseo.bo.default"}</a></li>
+        <li><a href="{url path='/admin/modules'}">{intl l="Modules" d="storeseo.bo.default"}</a></li>
+        <li>{intl l="StoreSeo configuration" d="storeseo.bo.default"}</li>
+    </ul>
+
+    <div class="general-block-decorator">
+
+        <div class="title title-without-tabs">
+            {intl l="Configure StoreSEO" d="storeseo.bo.default"}
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                {if $success}
+                <div class="alert alert-success">
+                    {intl l="Configuration correctly saved" d="storeseo.bo.default"}
+                </div>
+                {/if}
+
+                {form name='storeseo_form_config'}
+                <form method="post" action="{url path='/admin/module/StoreSeo'}">
+
+                    {form_hidden_fields form=$form}
+
+                    {include "includes/inner-form-toolbar.html" close_url={url path='/admin/modules'}}
+                    <br/>
+
+                    {form_field form=$form field="title"}
+                    <div class="form-group {if $error}has-error{/if}">
+                        <label class="control-label">
+                            {$label}
+
+                            {form_error form=$form field="title"}
+                            <br />
+                            <span class="error">{$message}</span>
+                            {/form_error}
+                        </label>
+
+                        <input type="text" class="form-control" name="{$name}" value="{$value}" />
+                    </div>
+                    {/form_field}
+
+                    {form_field form=$form field="description"}
+                    <div class="form-group {if $error}has-error{/if}">
+                        <label class="control-label">
+                            {$label}
+
+                            {form_error form=$form field="description"}
+                            <br />
+                            <span class="error">{$message}</span>
+                            {/form_error}
+                        </label>
+
+                        <input type="text" class="form-control" name="{$name}" value="{$value}" />
+                    </div>
+                    {/form_field}
+
+                    {form_field form=$form field="keywords"}
+                    <div class="form-group {if $error}has-error{/if}">
+                        <label class="control-label">
+                            {$label}
+
+                            {form_error form=$form field="keywords"}
+                            <br />
+                            <span class="error">{$message}</span>
+                            {/form_error}
+                        </label>
+
+                        <input type="text" class="form-control" name="{$name}" value="{$value}" />
+                    </div>
+                    {/form_field}
+
+                </form>
+                {/form}
+            </div>
+        </div>
+
+    </div>
+</div>
+{/block}
