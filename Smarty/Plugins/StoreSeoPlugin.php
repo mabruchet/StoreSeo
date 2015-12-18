@@ -36,20 +36,13 @@ class StoreSeoPlugin extends AbstractSmartyPlugin
         // Get language and moduleConfig
         $locale = $params['locale'];
 
-        // Check if the page title is the default ones
-        if ($params['title'] == ConfigQuery::getStoreName() || !isset($params['title'])) {
-            $smarty->assign("page_title", StoreSeo::getConfigValue('title', null, $locale));
-        }
+        // Get store title
+        $smarty->assign("store_name", StoreSeo::getConfigValue('title', null, $locale));
 
-        // Check if the page title is the default ones
-        if ($params['description'] == ConfigQuery::getStoreDescription() || !isset($params['description'])) {
-            $smarty->assign("page_description", StoreSeo::getConfigValue('description', null, $locale));
-        }
+        // Get store description
+        $smarty->assign("store_description", StoreSeo::getConfigValue('description', null, $locale));
 
-        // Get translated meta
-        $keyword = StoreSeo::getConfigValue('keywords', null, $locale);
-
-        // Assign translated meta to the template variables
-        $smarty->assign("page_keywords", $keyword);
+        // Get store keywords
+        $smarty->assign("page_keywords", StoreSeo::getConfigValue('keywords', null, $locale));
     }
 }
