@@ -48,6 +48,8 @@ Also add this in the ```{block name="meta"}```, after the ```<meta name="descrip
 ```
 {if $page_keywords}
     <meta name="keywords" content="{$page_keywords}">
+{else}
+    <meta name="keywords" content="{$default_keywords}">
 {/if}
 ```
 
