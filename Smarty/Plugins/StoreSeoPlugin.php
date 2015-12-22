@@ -43,6 +43,6 @@ class StoreSeoPlugin extends AbstractSmartyPlugin
         $smarty->assign("store_description", StoreSeo::getConfigValue('description', null, $locale));
 
         // Get store keywords
-        $smarty->assign("page_keywords", StoreSeo::getConfigValue('keywords', null, $locale));
+        $smarty->assign("default_keywords", StoreSeo::getConfigValue('keywords', null, $locale));
     }
 }
