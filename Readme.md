@@ -14,7 +14,7 @@ Manage translation for your store SEO meta.
 Add it in your main thelia composer.json file
 
 ```
-composer require thelia/store-seo-module:~1.2
+composer require thelia/store-seo-module:~1.2.0
 ```
 
 ## Usage
