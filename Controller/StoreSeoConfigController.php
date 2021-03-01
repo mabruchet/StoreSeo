@@ -3,6 +3,7 @@
 namespace StoreSeo\Controller;
 
 use StoreSeo\StoreSeo;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Thelia\Controller\Admin\BaseAdminController;
 use Thelia\Core\Security\AccessManager;
 use Thelia\Core\Security\Resource\AdminResources;
@@ -26,7 +27,7 @@ class StoreSeoConfigController extends BaseAdminController
 
         $form = $this->createForm(
             "storeseo_form_config",
-            'form',
+            FormType::class,
             [
                 'title' => StoreSeo::getConfigValue('title', null, $locale),
                 'description' => StoreSeo::getConfigValue('description', null, $locale),

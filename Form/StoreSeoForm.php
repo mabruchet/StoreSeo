@@ -2,16 +2,12 @@
 
 namespace StoreSeo\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Thelia\Form\BaseForm;
 
-/**
- * Class StoreSeoForm
- * @package StoreSeo\Form
- * @author Etienne Perriere <eperriere@openstudio.fr>
- */
 class StoreSeoForm extends BaseForm
 {
-    public function getName()
+    public static function getName()
     {
         return 'storeseo_form_config';
     }
@@ -24,17 +20,17 @@ class StoreSeoForm extends BaseForm
         $this->formBuilder
             ->add(
                 'title',
-                'text',
+                TextType::class,
                 ['label' => $this->translator->trans('Store name', [], 'storeseo.fo.default')]
             )
             ->add(
                 'description',
-                'text',
+                TextType::class,
                 ['label' => $this->translator->trans('Store description', [], 'storeseo.fo.default')]
             )
             ->add(
                 'keywords',
-                'text',
+                TextType::class,
                 ['label' => $this->translator->trans('Keywords', [], 'storeseo.fo.default')]
             )
         ;
