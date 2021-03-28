@@ -37,10 +37,10 @@ class StoreSeoPlugin extends AbstractSmartyPlugin
         $locale = $params['locale'];
 
         // Get store title
-        $smarty->assign("store_name", StoreSeo::getConfigValue('title', null, $locale));
+        $smarty->assign("store_name", StoreSeo::getConfigValue('title', ConfigQuery::read('stome_name'), $locale));
 
         // Get store description
-        $smarty->assign("store_description", StoreSeo::getConfigValue('description', null, $locale));
+        $smarty->assign("store_description", StoreSeo::getConfigValue('description', ConfigQuery::read('stome_description'), $locale));
 
         // Get store keywords
         $smarty->assign("default_keywords", StoreSeo::getConfigValue('keywords', null, $locale));
