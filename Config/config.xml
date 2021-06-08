@@ -14,10 +14,4 @@
         <form name="storeseo_form_config" class="StoreSeo\Form\StoreSeoForm" />
     </forms>
 
-    <services>
-        <service id="storeseo.smarty.plugin" class="StoreSeo\Smarty\Plugins\StoreSeoPlugin" scope="request">
-            <tag name="thelia.parser.register_plugin"/>
-        </service>
-    </services>
-
 </config>

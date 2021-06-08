@@ -8,6 +8,7 @@ use Thelia\Controller\Admin\BaseAdminController;
 use Thelia\Core\Security\AccessManager;
 use Thelia\Core\Security\Resource\AdminResources;
 use Thelia\Form\Exception\FormValidationException;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class StoreSeoConfigController
@@ -16,6 +17,9 @@ use Thelia\Form\Exception\FormValidationException;
  */
 class StoreSeoConfigController extends BaseAdminController
 {
+    /**
+     * @Route("/admin/module/StoreSeo", name="storeseo_configuration_default", methods="GET")
+     */
     public function defaultAction()
     {
         if (null !== $response = $this->checkAuth([AdminResources::MODULE], ["storeseo"], AccessManager::VIEW)) {
@@ -40,6 +44,9 @@ class StoreSeoConfigController extends BaseAdminController
         return $this->render("storeseo-configuration");
     }
 
+    /**
+     * @Route("/admin/module/StoreSeo", name="storeseo_configuration_save", methods="POST")
+     */
     public function saveAction()
     {
         if (null !== $response = $this->checkAuth([AdminResources::MODULE], ["storeseo"], AccessManager::UPDATE)) {

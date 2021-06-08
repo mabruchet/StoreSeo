@@ -33,61 +33,63 @@
                     </div>
                 {/if}
 
-                {form name='storeseo_form_config'}
-                <form method="post" action="{url path='/admin/module/StoreSeo'}">
+                <div class="form-container">
+                    {form name='storeseo_form_config'}
+                    <form method="post" action="{url path='/admin/module/StoreSeo'}">
 
-                    {form_hidden_fields form=$form}
+                        {form_hidden_fields form=$form}
 
-                    {include "includes/inner-form-toolbar.html" close_url={url path='/admin/modules'}}
-                    <br/>
+                        {include "includes/inner-form-toolbar.html" close_url={url path='/admin/modules'}}
+                        <br/>
 
-                    {form_field form=$form field="title"}
-                    <div class="form-group {if $error}has-error{/if}">
-                        <label class="control-label">
-                            {$label}
+                        {form_field form=$form field="title"}
+                        <div class="form-group {if $error}has-error{/if}">
+                            <label class="control-label">
+                                {$label}
 
-                            {form_error form=$form field="title"}
-                            <br />
-                            <span class="error">{$message|default:null}</span>
-                            {/form_error}
-                        </label>
+                                {form_error form=$form field="title"}
+                                <br />
+                                <span class="error">{$message|default:null}</span>
+                                {/form_error}
+                            </label>
 
-                        <input type="text" class="form-control" name="{$name}" value="{$value}" />
-                    </div>
-                    {/form_field}
+                            <input type="text" class="form-control" name="{$name}" value="{$value}" />
+                        </div>
+                        {/form_field}
 
-                    {form_field form=$form field="description"}
-                    <div class="form-group {if $error}has-error{/if}">
-                        <label class="control-label">
-                            {$label}
+                        {form_field form=$form field="description"}
+                        <div class="form-group {if $error}has-error{/if}">
+                            <label class="control-label">
+                                {$label}
 
-                            {form_error form=$form field="description"}
-                            <br />
-                            <span class="error">{$message|default:null}</span>
-                            {/form_error}
-                        </label>
+                                {form_error form=$form field="description"}
+                                <br />
+                                <span class="error">{$message|default:null}</span>
+                                {/form_error}
+                            </label>
 
-                        <input type="text" class="form-control" name="{$name}" value="{$value}" />
-                    </div>
-                    {/form_field}
+                            <input type="text" class="form-control" name="{$name}" value="{$value}" />
+                        </div>
+                        {/form_field}
 
-                    {form_field form=$form field="keywords"}
-                    <div class="form-group {if $error}has-error{/if}">
-                        <label class="control-label">
-                            {$label}
+                        {form_field form=$form field="keywords"}
+                        <div class="form-group {if $error}has-error{/if}">
+                            <label class="control-label">
+                                {$label}
 
-                            {form_error form=$form field="keywords"}
-                            <br />
-                            <span class="error">{$message|default:null}</span>
-                            {/form_error}
-                        </label>
+                                {form_error form=$form field="keywords"}
+                                <br />
+                                <span class="error">{$message|default:null}</span>
+                                {/form_error}
+                            </label>
 
-                        <input type="text" class="form-control" name="{$name}" value="{$value}" />
-                    </div>
-                    {/form_field}
+                            <input type="text" class="form-control" name="{$name}" value="{$value}" />
+                        </div>
+                        {/form_field}
 
-                </form>
-                {/form}
+                    </form>
+                    {/form}
+                </div>
             </div>
         </div>
 
